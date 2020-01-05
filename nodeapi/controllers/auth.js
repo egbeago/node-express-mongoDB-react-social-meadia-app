@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const expressJwt = require("express-jwt")
-const User = require('../models/users')
+const User = require('../models/user')
 
 
 exports.signup = async(req, res) => {

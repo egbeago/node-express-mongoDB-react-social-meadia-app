@@ -7,10 +7,10 @@ const {requireSignin} = require('../controllers/auth');
 const router = express.Router();
 
 
-router.get("/users", allUsers);
-router.get("/users/:userId", requireSignin, getUser);
-router.put("/users/:userId", requireSignin, updateUser);
-router.delete("/users/:userId", requireSignin, deleteUser);
+router.get("/user", allUsers);
+router.get("/user/:userId", requireSignin, getUser);
+router.put("/user/:userId", requireSignin, updateUser);
+router.delete("/user/:userId", requireSignin, deleteUser);
 
 // any route containong: userId, our app will first execute userByID()
 router.param("userId", userById)
