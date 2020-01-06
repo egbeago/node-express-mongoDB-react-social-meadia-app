@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {list} from "./apiUser"
-import defaultProfile from "../images/images.jpg"
+import defaultProfile from "./images/avater.jpeg"
 
 class Users extends Component {
     constructor() {
