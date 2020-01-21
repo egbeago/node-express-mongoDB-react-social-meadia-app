@@ -3,6 +3,7 @@ import {isAuthenticated} from "../auth"
 import {Redirect, Link} from "react-router-dom";
 import {read} from "./apiUser";
 import defaultProfile from "../images/avater.jpg"
+import DeleteUser from './DeleteUser';
 
 
 class Profile extends Component {
@@ -37,16 +38,17 @@ class Profile extends Component {
         if(redirectToSignin) return <Redirect to="/signin"/>
         return ( 
             <div className="container">
+              <h2 className="mt-5 mb-5">Profile</h2>
               <div className="row">
               <div className="col-md-6">
-                        <h2 className="mt-5 mb-5">Profile</h2>
+                        
 
                         <img className="card-img-top" src={defaultProfile} alt={user.name} style={{width: "100%", height: "15vw", objectFit: "cover"}} />
 
                     </div>
 
                     <div className="col-md-6">
-                        <div className="lead mt-5 ml-5">
+                        <div className="lead mt-2">
                         <p>Hello {user.name}</p>
                         <p>Email: {user.email}</p>
                         <p>{`Joined ${new Date(user.created).toDateString()}`}</p>
@@ -56,9 +58,7 @@ class Profile extends Component {
                             <Link className="btn btn-raised btn-success mr-5" to={`/user/edit/${user._id}`}>
                               EDIT PROFILE
                             </Link>
-                            <button className="btn btn-raised btn-danger">
-                              DELETE PROFILE
-                            </button>
+                            <DeleteUser />
                           </div>
                         )}
                     </div>
