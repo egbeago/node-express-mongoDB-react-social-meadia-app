@@ -28,7 +28,12 @@ class Profile extends Component {
         });
       };
 
-    componentDidMount() {
+    componentDidMount(props) {
+        const userId = props.match.params.userId
+        this.init(userId)
+    }
+    
+    componentWillReceiveProps() {
         const userId = this.props.match.params.userId
         this.init(userId)
     }
